@@ -38,11 +38,7 @@ $f3->route('GET /', function($f3) {
     $f3->set('cupcakes', $cupcakes);
 
     //Add a variable that stores your age
-
-    //In the view page, if age is over 30, print "You are mature".
-    // Otherwise print,
-    //"You are a spring chicken"
-
+    $f3->set('age', 25);
 
     $view = new Template();
     echo $view->render('views/info.html');
