@@ -14,6 +14,25 @@ $f3 = Base::instance();
 //Define a default route
 $f3->route('GET /', function($f3) {
 
+    $f3->set('username', 'jshmo');
+    $f3->set('password', sha1('Password01'));
+    $f3->set('title', 'Working with Templates');
+    $f3->set('temp', 67);
+    $f3->set('radius', 10);
+
+    //Define an array of fruits
+    $fruits = array("apple", "banana", "orange");
+    /*
+    foreach ($fruits as $fruit) {
+        echo $fruit;
+    }
+    */
+
+    $f3->set('fruits', $fruits);
+    //$f3->set('fruits', array("apple", "banana", "orange"))
+
+    $f3->set('colors', array("red", "blue", "yellow"));
+
     $view = new Template();
     echo $view->render('views/info.html');
 });
